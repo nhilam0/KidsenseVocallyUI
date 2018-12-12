@@ -31,6 +31,7 @@ dependencies {
     implementation project(':kidsenseofflinesdk')
     implementation project(':kidsense_en_medium_v1')
     implementation project(':kidsense_en_small_v1')
+    implementation project(':kidsense_en_large_v1')
     implementation project(':kidsensemedia')
     implementation project(':kidsensevad')
 }
