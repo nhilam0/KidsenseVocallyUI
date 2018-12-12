@@ -1,2 +1,2 @@
 include ':app', ':kidsense_en_small_v1',
-        ':kidsense_en_medium_v1', ':kidsensemedia', ':kidsensevad',':kidsenseofflinesdk'
+        ':kidsense_en_medium_v1', ':kidsensemedia', ':kidsensevad',':kidsenseofflinesdk',':kidsense_en_large_v1'
