@@ -31,6 +31,12 @@ _koManager.initModels(configPath,"your-api-key-here");
   String configPath = Kidsense_en_medium_v1.autoSync(MainActivity.this);
 ```
 
+* To use large model uncomment follwing line
+
+```java
+  String configPath = Kidsense_en_large_v1.autoSync(MainActivity.this);
+```
+
 * You can also create the custom model using our online interface **[Model Generator](https://developer.kidsense.ai/)**.
 
 
