@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="400" height="150" src="resources/images/logo.png">
+  <img width="400" height="100" src="resources/images/logo.png">
 </p>
 
 # Vocally Android Demo
