@@ -20,6 +20,7 @@ import com.kadho.android.sdk.asr.offline.KidsenseOfflineManager;
 
 import com.kadho.kidsense.kidsense_en_medium_v1.Kidsense_en_medium_v1;
 import com.kadho.kidsense.kidsense_en_small_v1.Kidsense_en_small_v1;
+import com.kadho.kidsense.kidsense_en_large_v1.Kidsense_en_large_v1;
 
 import kidsense.kadho.com.kidsense_offline_demo.Configs;
 import kidsense.kadho.com.kidsense_offline_demo.R;
