@@ -1,12 +1,19 @@
 package kidsense.kadho.com.kidsense_offline_demo.view;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +32,14 @@ import com.kadho.kidsense.kidsense_en_large_v1.Kidsense_en_large_v1;
 import kidsense.kadho.com.kidsense_offline_demo.Configs;
 import kidsense.kadho.com.kidsense_offline_demo.R;
 
+
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.INTERNET;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.RECORD_AUDIO;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
+
 public class MainActivity extends AppCompatActivity implements KidsenseAudioRecorder.KidsenseAudioRecorderListener, View.OnClickListener, CompoundButton.OnCheckedChangeListener, KidsenseOfflineManager.KidsenseOfflineEvent
 {
     private static String TAG = "Kidsense";
@@ -38,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
     private TextView _tvBox, _tvBox2;
     private ProgressDialog _dialog;
 
+    private boolean isAllPermissionsGranted = false;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -46,13 +62,25 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         setContentView(R.layout.activity_main_offline);
 
         Instance = this;
-	
+
+
+        if (!checkPermission()) {
+            requestPermission();
+        }else {
+            isAllPermissionsGranted = true;
+        }
+        if (isAllPermissionsGranted){
+            initModel();
+        }
+    }
+
+    public void initModel(){
         _koManager = KidsenseOfflineManager.getInstance(MainActivity.this);
 
         // HERE YOU INITIALIZE A MODEL
-        String configPath = Kidsense_en_medium_v1.autoSync(MainActivity.this);
-//      String configPath = Kidsense_en_small_v1.autoSync(MainActivity.this);
-//	String configPath = Kidsense_en_large_v1.autoSync(MainActivity.this);
+        //  String configPath = Kidsense_en_medium_v1.autoSync(MainActivity.this);
+        //  String configPath = Kidsense_en_small_v1.autoSync(MainActivity.this);
+        	String configPath = Kidsense_en_large_v1.autoSync(MainActivity.this);
         _koManager.initModel(configPath,"your-api-key-here");
 
         setButtonHandlers();
@@ -68,6 +96,69 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         _tvBox2 = (TextView)findViewById(R.id.textView2);
         _tvBox2.setMovementMethod(new ScrollingMovementMethod());
     }
+
+    private boolean checkPermission() {
+        int result = ContextCompat.checkSelfPermission(getApplicationContext(),READ_EXTERNAL_STORAGE);
+        int result1 = ContextCompat.checkSelfPermission(getApplicationContext(),WRITE_EXTERNAL_STORAGE);
+        int result2 = ContextCompat.checkSelfPermission(getApplicationContext(),RECORD_AUDIO);
+        int result3 = ContextCompat.checkSelfPermission(getApplicationContext(),INTERNET);
+        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED && result2 == PackageManager.PERMISSION_GRANTED && result3 == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void requestPermission() {
+        int permsRequestCode = 200;
+        String[] perms = {READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,INTERNET,RECORD_AUDIO};
+        ActivityCompat.requestPermissions(this, perms, permsRequestCode);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int permsRequestCode, String[] permissions, int[] grantResults){
+        switch(permsRequestCode){
+            case 200:
+                if (grantResults.length > 0) {
+
+                    boolean readAccepted = grantResults[0]==PackageManager.PERMISSION_GRANTED;
+                    boolean writeAccepted = grantResults[1]==PackageManager.PERMISSION_GRANTED;
+                    boolean recordAccepted = grantResults[2]==PackageManager.PERMISSION_GRANTED;
+                    boolean internetccepted = grantResults[3]==PackageManager.PERMISSION_GRANTED;
+
+                    if (readAccepted && writeAccepted && recordAccepted && internetccepted){
+                        Log.e("KidsenseAssessment","All permissions are accepted");
+                        isAllPermissionsGranted = true;
+                        initModel();
+                    }
+                    else {
+                        Log.e("KidsenseAssessment","Some permissions are not accepted");
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            if (shouldShowRequestPermissionRationale(ACCESS_FINE_LOCATION)) {
+                                showMessageOKCancel("You need to allow access to all the permissions",
+                                        new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                                    requestPermissions(new String[]{INTERNET, RECORD_AUDIO,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE},
+                                                            200);
+                                                }
+                                            }
+                                        });
+                                return;
+                            }
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
+        new AlertDialog.Builder(MainActivity.this)
+                .setMessage(message)
+                .setPositiveButton("OK", okListener)
+                .setNegativeButton("Cancel", null)
+                .create()
+                .show();
+    }
+
 
     @Override
     public void onStop()
