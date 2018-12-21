@@ -6,7 +6,7 @@
 
 This demo contains Kidsense EDGE ASR SDK along with VAD (Voice Activity Detection) and Audio Recorder SDK. Open this project in Android Studio. 
 
-* You can run this demo on arm64-v8a, armeabi-v7a and x86_64 android platforms. 
+* You can run this demo on **arm64-v8a**, **armeabi-v7a** and **x86_64** android platforms. 
 
 * To run this demo register yourself on **[Kidsense Development Portal](https://developer.kidsense.ai)** and get your API key. Use this API key as follows
 
