@@ -25,9 +25,9 @@ import android.widget.TextView;
 import com.kadho.android.media.KidsenseAudioRecorder;
 import com.kadho.android.sdk.asr.offline.KidsenseOfflineManager;
 
-import com.kadho.kidsense.kidsense_en_medium_v1.Kidsense_en_medium_v1;
-import com.kadho.kidsense.kidsense_en_small_v1.Kidsense_en_small_v1;
-import com.kadho.kidsense.kidsense_en_large_v1.Kidsense_en_large_v1;
+import com.kadho.kidsense.kidsense_en_medium_v2.Kidsense_en_medium_v2;
+import com.kadho.kidsense.kidsense_en_small_v2.Kidsense_en_small_v2;
+import com.kadho.kidsense.kidsense_en_large_v2.Kidsense_en_large_v2;
 
 import kidsense.kadho.com.kidsense_offline_demo.Configs;
 import kidsense.kadho.com.kidsense_offline_demo.R;
@@ -78,9 +78,9 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         _koManager = KidsenseOfflineManager.getInstance(MainActivity.this);
 
         // HERE YOU INITIALIZE A MODEL
-        //  String configPath = Kidsense_en_medium_v1.autoSync(MainActivity.this);
-        //  String configPath = Kidsense_en_small_v1.autoSync(MainActivity.this);
-        	String configPath = Kidsense_en_large_v1.autoSync(MainActivity.this);
+          String configPath = Kidsense_en_medium_v2.autoSync(MainActivity.this);
+//          String configPath = Kidsense_en_small_v2.autoSync(MainActivity.this);
+//        String configPath = Kidsense_en_large_v2.autoSync(MainActivity.this);
         _koManager.initModel(configPath,"your-api-key-here");
 
         setButtonHandlers();

@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('kidsense_en_medium_v2.aar'))

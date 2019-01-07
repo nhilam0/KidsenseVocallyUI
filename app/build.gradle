@@ -30,9 +30,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':kidsenseofflinesdk')
-    implementation project(':kidsense_en_medium_v1')
-    implementation project(':kidsense_en_small_v1')
-    implementation project(':kidsense_en_large_v1')
+    implementation project(':kidsense_en_medium_v2')
+    implementation project(':kidsense_en_small_v2')
+    implementation project(':kidsense_en_large_v2')
     implementation project(':kidsensemedia')
     implementation project(':kidsensevad')
 }
