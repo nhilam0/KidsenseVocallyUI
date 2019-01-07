@@ -18,9 +18,9 @@ _koManager.initModels(configPath,"your-api-key-here");
 
 | Model Name | Size | Vocabulary Size |
 | --- | --- | --- |
-| English Small | 11MB | 1k |
-| English Medium | 15.7MB | 15k |
-| English Large | 50MB | 68k |
+| English Small | 24MB | 1k |
+| English Medium | 27MB | 15k |
+| English Large | 63MB | 68k |
 
 * To use small model uncomment following line
 
