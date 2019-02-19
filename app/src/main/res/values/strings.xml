@@ -3,21 +3,4 @@
     <string name="stop_record">Stop Record</string>
     <string name="start_record">Start Record</string>
     <string name="timerVal">00:00:00</string>
-	<string name="settings_button">Settings</string>
-    <string name="security">Security</string>
-    <string name="featureControl">Feature Control</string>
-    <string name="userControls">User Control</string>
-    <string name="allowed">Allowed</string>
-    <string name="onlineShopping">Online Shopping</string>
-    <string name="phoneCalls">Phone Calls</string>
-    <string name="vehicleControl">Vehicle Control</string>
-    <string name="thermostatControl">Thermostat Control</string>
-    <string name="title_activity_display_settings_page">Settings Page</string>
-    <string name="settingsPage">SETTINGS</string>
-    <string name="authorized"><u>Authorized Websites</u></string>
-    <string name="enterWebsite">Enter Website</string>
-    <string name="addWebsite">Add Website</string>
-    <string name="baseWebsite">WWW.KIDSENSE.AI</string>
-    <string name="placeHolder">Enter Website</string>
-    <string name="deleteWebsiteButton">Delete Website</string>
 </resources>
