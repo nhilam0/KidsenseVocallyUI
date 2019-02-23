@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".security">
 
+
     <!-- TODO: Update blank fragment layout -->
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#BDBDBD">
 
         <TextView
             android:id="@+id/textView8"
