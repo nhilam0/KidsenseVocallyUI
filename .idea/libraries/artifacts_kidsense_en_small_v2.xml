@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="artifacts:kidsense_en_small_v2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/kidsense_en_small_v2.aar/293f47cd752752134de6cd6c15fe5968/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/kidsense_en_small_v2.aar/293f47cd752752134de6cd6c15fe5968/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
