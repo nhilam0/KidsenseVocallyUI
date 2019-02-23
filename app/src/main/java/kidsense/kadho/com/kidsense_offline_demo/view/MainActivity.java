@@ -3,6 +3,7 @@ package kidsense.kadho.com.kidsense_offline_demo.view;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -31,6 +32,7 @@ import com.kadho.kidsense.kidsense_en_large_v2.Kidsense_en_large_v2;
 
 import kidsense.kadho.com.kidsense_offline_demo.Configs;
 import kidsense.kadho.com.kidsense_offline_demo.R;
+import kidsense.kadho.com.kidsense_offline_demo.SettingsActivity;
 
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
           String configPath = Kidsense_en_medium_v2.autoSync(MainActivity.this);
 //          String configPath = Kidsense_en_small_v2.autoSync(MainActivity.this);
 //        String configPath = Kidsense_en_large_v2.autoSync(MainActivity.this);
-        _koManager.initModel(configPath,"your-api-key-here");
+        _koManager.initModel(configPath,"34u9wviibdy2qiyxqx7vsumrau");
 
         setButtonHandlers();
         enableButtons(false, Configs.IS_USE_LOCAL_VAD);
@@ -369,6 +371,12 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
                         "Loading. Please wait...", true);
             }
         });
+    }
+
+    public void onSettings(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+
+        startActivity(intent);
     }
 
     @Override

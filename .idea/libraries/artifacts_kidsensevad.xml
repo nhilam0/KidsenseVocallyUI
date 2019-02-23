@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="artifacts:kidsensevad">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/kidsensevad.aar/b112235ef3bfc95547a5643f511dc353/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/kidsensevad.aar/b112235ef3bfc95547a5643f511dc353/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

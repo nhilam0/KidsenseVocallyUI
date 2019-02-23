@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/kidsense_en_large_v2" />
+            <option value="$PROJECT_DIR$/kidsense_en_medium_v2" />
+            <option value="$PROJECT_DIR$/kidsense_en_small_v2" />
+            <option value="$PROJECT_DIR$/kidsensemedia" />
+            <option value="$PROJECT_DIR$/kidsenseofflinesdk" />
+            <option value="$PROJECT_DIR$/kidsensevad" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
