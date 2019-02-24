@@ -3,6 +3,7 @@ package kidsense.kadho.com.kidsense_offline_demo.view;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -12,9 +13,13 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -61,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_offline);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         Instance = this;
 
 
@@ -81,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
           String configPath = Kidsense_en_medium_v2.autoSync(MainActivity.this);
 //          String configPath = Kidsense_en_small_v2.autoSync(MainActivity.this);
 //        String configPath = Kidsense_en_large_v2.autoSync(MainActivity.this);
-        _koManager.initModel(configPath,"your-api-key-here");
+        _koManager.initModel(configPath,"5afk87h90kln05963vzpig9jvb");
 
         setButtonHandlers();
         enableButtons(false, Configs.IS_USE_LOCAL_VAD);
@@ -424,5 +432,24 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         });
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_items, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent = new Intent(this, settings.class);
+        this.startActivity(intent);
+        return true;
+    }
+
+    public void goToSettings(View view) {
+        Intent intent = new Intent(this, settings.class);
+        startActivity(intent);
     }
 }
