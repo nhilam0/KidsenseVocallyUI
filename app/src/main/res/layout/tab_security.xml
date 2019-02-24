@@ -14,62 +14,86 @@
         android:layout_height="match_parent"
         android:background="#BDBDBD">
 
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:checked="true"
+            android:clickable="false"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/allowed"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="252dp"
+            android:layout_width="290dp"
             android:layout_height="34dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="19dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="sans-serif"
             android:text="Geolocation / Current Location"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBox13"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="252dp"
+            android:layout_width="290dp"
             android:layout_height="34dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="19dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="sans-serif"
             android:text="Video/Audio Files"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBox10"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView10"
-            android:layout_width="252dp"
+            android:layout_width="290dp"
             android:layout_height="34dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="23dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="sans-serif"
             android:text="Social Security Number"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBox12"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView9"
-            android:layout_width="251dp"
+            android:layout_width="290dp"
             android:layout_height="31dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="sans-serif"
             android:text="Email Address"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBox7"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <CheckBox
             android:id="@+id/checkBox6"
-            android:layout_width="36dp"
-            android:layout_height="41dp"
-            android:layout_alignBottom="@+id/textView4"
+            android:layout_width="30dp"
+            android:layout_height="38dp"
             android:layout_alignStart="@+id/button4"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="28dp"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBox9" />
 
@@ -77,10 +101,10 @@
             android:id="@+id/checkBox7"
             android:layout_width="30dp"
             android:layout_height="38dp"
-            android:layout_alignBottom="@+id/textView4"
             android:layout_alignStart="@+id/button4"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="22dp"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBox11" />
 
@@ -88,10 +112,10 @@
             android:id="@+id/checkBox11"
             android:layout_width="30dp"
             android:layout_height="38dp"
-            android:layout_alignBottom="@+id/textView4"
             android:layout_alignStart="@+id/button4"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="22dp"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
 
@@ -99,10 +123,10 @@
             android:id="@+id/checkBox10"
             android:layout_width="30dp"
             android:layout_height="38dp"
-            android:layout_alignBottom="@+id/textView4"
             android:layout_alignStart="@+id/button4"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="15dp"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBox13" />
 
@@ -110,10 +134,10 @@
             android:id="@+id/checkBox13"
             android:layout_width="30dp"
             android:layout_height="38dp"
-            android:layout_alignBottom="@+id/textView4"
             android:layout_alignStart="@+id/button4"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="15dp"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBox12" />
 
@@ -121,10 +145,10 @@
             android:id="@+id/checkBox12"
             android:layout_width="30dp"
             android:layout_height="38dp"
-            android:layout_alignBottom="@+id/textView4"
             android:layout_alignStart="@+id/button4"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBox7" />
 
@@ -132,84 +156,80 @@
             android:id="@+id/checkBox9"
             android:layout_width="30dp"
             android:layout_height="38dp"
-            android:layout_alignBottom="@+id/textView4"
             android:layout_alignStart="@+id/button4"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="38dp"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
 
         <CheckBox
             android:id="@+id/checkBox8"
             android:layout_width="30dp"
             android:layout_height="38dp"
-            android:layout_alignBottom="@+id/textView4"
             android:layout_alignStart="@+id/button4"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="12dp"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="243dp"
+            android:layout_width="290dp"
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="sans-serif"
             android:text="Full Name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBox9"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="249dp"
+            android:layout_width="290dp"
             android:layout_height="33dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="23dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="sans-serif"
             android:text="Home Address"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBox8"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView7"
-            android:layout_width="249dp"
+            android:layout_width="290dp"
             android:layout_height="34dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="27dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="sans-serif"
             android:text="Telephone / Mobile Number"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBox11"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="249dp"
+            android:layout_width="290dp"
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="31dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="sans-serif"
             android:text="UserName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBox6"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="7dp"
-            android:background="#00afed"
-            android:text="Save"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
 </RelativeLayout>
