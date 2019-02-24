@@ -7,36 +7,50 @@
     android:background="#BDBDBD"
     tools:context=".Home">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="345dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="114dp"
-        android:background="#03A9F4"
-        android:onClick="goToSignup"
-        android:text="Sign Up"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="163dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kidsense_logo" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="345dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="499dp"
-        android:layout_marginEnd="33dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="163dp"
+        android:layout_marginEnd="106dp"
+        android:background="#00adef"
         android:onClick="goToLogin"
-        android:text="Log In "
-        android:textColor="#FFFFFF"
-        android:background="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        android:text="LOGIN"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="133dp"
+        android:background="#00adef"
+        android:onClick="goToSignup"
+        android:text="Signup"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </android.support.constraint.ConstraintLayout>
