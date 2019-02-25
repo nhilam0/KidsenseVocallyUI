@@ -212,7 +212,7 @@ public class Filter {
         String temp = "";
         for (String word: split) {
             if (profanityList.contains(word.toLowerCase())) {
-                word = "***";
+                word = "*****";
             }
             temp += word + " ";
         }
