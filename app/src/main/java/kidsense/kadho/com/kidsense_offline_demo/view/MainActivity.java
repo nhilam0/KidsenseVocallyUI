@@ -195,6 +195,9 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
             if (isLocalVad)
             {
                 enableButton(R.id.btnStart, false);
+
+                int pressedBlue = Color.parseColor("#0080b3");
+                findViewById(R.id.btnStart).setBackgroundColor(pressedBlue);
             }
             else
             {
@@ -209,6 +212,10 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
             if (isLocalVad)
             {
                 enableButton(R.id.btnStart, true);
+
+                int releasedBlue = Color.parseColor("#00adef");
+                findViewById(R.id.btnStart).setBackgroundColor(releasedBlue);
+
             }
         }
     }
