@@ -4,8 +4,8 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "kidsense.kadho.com.kidsense_offline_demo"
-        minSdkVersion 21
-        targetSdkVersion 22
+        minSdkVersion 27
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -36,4 +36,5 @@ dependencies {
     implementation project(':kidsensemedia')
     implementation project(':kidsensevad')
     implementation 'com.android.support:design:27.1.1'
+    implementation 'org.apache.opennlp:opennlp-tools:1.9.1'
 }

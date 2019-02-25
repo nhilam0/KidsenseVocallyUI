@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
     private TextView _tvBox, _tvBox2;
     private ProgressDialog _dialog;
 
+    private Filter filter;
+
     private boolean isAllPermissionsGranted = false;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
           String configPath = Kidsense_en_medium_v2.autoSync(MainActivity.this);
 //          String configPath = Kidsense_en_small_v2.autoSync(MainActivity.this);
 //        String configPath = Kidsense_en_large_v2.autoSync(MainActivity.this);
-        _koManager.initModel(configPath,"5afk87h90kln05963vzpig9jvb");
+        _koManager.initModel(configPath,"34u9wviibdy2qiyxqx7vsumrau");
 
         setButtonHandlers();
         enableButtons(false, Configs.IS_USE_LOCAL_VAD);
@@ -103,6 +105,9 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         _tvBox.setMovementMethod(new ScrollingMovementMethod());
         _tvBox2 = (TextView)findViewById(R.id.textView2);
         _tvBox2.setMovementMethod(new ScrollingMovementMethod());
+
+        //filter
+        filter = Filter.getFilter(this);
     }
 
     private boolean checkPermission() {
@@ -353,7 +358,8 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                _tvBox.setText(result);
+                //tvBox.setText(result);
+                _tvBox.setText(filter.filterText(result.replace(".", "")));
                 _tvBox.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
                 _tvBox.setTextColor(Color.BLACK);
             }
