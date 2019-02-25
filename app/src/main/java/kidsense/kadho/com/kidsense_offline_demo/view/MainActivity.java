@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
             {
                 enableButton(R.id.btnStart, false);
 
-                int pressedBlue = Color.parseColor("#0080b3");
+                int pressedBlue = Color.parseColor("#004966");
                 findViewById(R.id.btnStart).setBackgroundColor(pressedBlue);
             }
             else

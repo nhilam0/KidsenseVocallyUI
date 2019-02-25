@@ -1,3 +1,4 @@
 *.xml
 *.properties
 *.ser
+.idea/workspace.xml
