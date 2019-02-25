@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BDBDBD"
+    android:background="@color/background"
     tools:context=".featureControl">
 
     <!-- TODO: Update blank fragment layout -->
@@ -20,7 +20,7 @@
         android:text="@string/allowed"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -86,7 +86,7 @@
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#BDBDBD"
+            android:background="@color/background"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="347dp" />
 
@@ -107,10 +107,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/placeHolder"
-            android:inputType="textPersonName"
             android:singleLine="true"
-            android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textColorHint="#fff" />
 
@@ -131,10 +130,10 @@
 
             <View
                 android:id="@+id/buttonDivider"
-                android:layout_width="40dp"
+                android:layout_width="45dp"
                 android:layout_height="50dp"
                 android:layout_weight="0"
-                android:background="#BDBDBD" />
+                android:background="@color/background" />
 
             <Button
                 android:id="@+id/deleteWebsiteButton"
@@ -151,7 +150,7 @@
             android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:background="#BDBDBD"
+            android:background="@color/background"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="347dp" />
 

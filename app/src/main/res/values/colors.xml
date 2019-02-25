@@ -2,6 +2,8 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303f9f</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="checkBox">#FFAE02</color>
+    <color name="colorAccent">#000</color>
+    <color name="background">#bfbfbf</color>
+    <color name="toolbarColor">#ffae02</color>
+    <color name="textHintColor">#595959</color>
 </resources>

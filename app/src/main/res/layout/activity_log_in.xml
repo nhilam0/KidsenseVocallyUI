@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BDBDBD"
+    android:background="@color/background"
     tools:context=".view.LogIn">
 
     <ImageView
@@ -24,7 +24,7 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,11 +41,12 @@
             android:layout_marginEnd="42dp"
             android:layout_marginBottom="5dp"
             android:ems="10"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="sans-serif"
+            android:drawableLeft="@drawable/icon_person"
             android:hint="Email"
+            android:gravity="center"
             android:inputType="textEmailAddress"
             android:textAlignment="center"
-            android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/editText2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,11 +67,12 @@
             android:layout_width="327dp"
             android:layout_height="43dp"
             android:ems="10"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="sans-serif"
             android:hint="Password"
+            android:gravity="center"
+            android:drawableLeft="@drawable/icon_password"
             android:inputType="textPassword"
             android:textAlignment="center"
-            android:textColor="#000000"
             android:textSize="20sp" />
     </android.support.design.widget.TextInputLayout>
 
@@ -78,7 +80,7 @@
         android:id="@+id/button2"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:background="#00adef"
         android:onClick="goToMain"
         android:text="Log In"

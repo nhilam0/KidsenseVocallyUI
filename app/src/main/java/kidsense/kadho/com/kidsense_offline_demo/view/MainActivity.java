@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
           String configPath = Kidsense_en_medium_v2.autoSync(MainActivity.this);
 //          String configPath = Kidsense_en_small_v2.autoSync(MainActivity.this);
 //        String configPath = Kidsense_en_large_v2.autoSync(MainActivity.this);
-        _koManager.initModel(configPath,"34u9wviibdy2qiyxqx7vsumrau");
+        _koManager.initModel(configPath,"5afk87h90kln05963vzpig9jvb");
 
         setButtonHandlers();
         enableButtons(false, Configs.IS_USE_LOCAL_VAD);

@@ -14,10 +14,22 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        findViewById(R.id.loginLink).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToLogin(v);
+            }
+        });
     }
 
     public void goToMain(View view) {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToLogin(View view) {
+        Intent intent = new Intent(this, LogIn.class);
         startActivity(intent);
     }
 }
