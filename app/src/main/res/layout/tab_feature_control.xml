@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BDBDBD"
+    tools:context=".featureControl">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:checked="true"
+        android:clickable="false"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/allowed"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        android:overScrollMode="always"
+        android:verticalScrollbarPosition="defaultPosition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox">
+
+        <CheckBox
+            android:id="@+id/option_1"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/onlineShopping"
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/option_2"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/phoneCalls"
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/option_3"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/thermostatControl"
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/option_4"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/vehicleControl"
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#BDBDBD"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="347dp" />
+
+        <TextView
+            android:id="@+id/authorizedWebsitesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/authorized"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="139dp"
+            tools:layout_editor_absoluteY="453dp" />
+
+        <EditText
+            android:id="@+id/enterWebsite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:hint="@string/placeHolder"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textColorHint="#fff" />
+
+        <LinearLayout
+            android:id="@+id/listViewButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/addWebsiteButton"
+                android:layout_width="176dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/addWebsite"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/buttonDivider"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:background="#BDBDBD" />
+
+            <Button
+                android:id="@+id/deleteWebsiteButton"
+                android:layout_width="171dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@android:color/holo_red_dark"
+                android:text="@string/deleteWebsiteButton"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#BDBDBD"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="347dp" />
+
+        <ListView
+            android:id="@+id/allWebsites"
+            style="@style/Widget.AppCompat.Light.ListView.DropDown"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:clickable="false"
+            android:divider="@color/colorPrimaryDark"
+            android:dividerHeight="2dp"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:paddingBottom="50dp"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="437dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
