@@ -7,6 +7,78 @@
     android:background="@color/background"
     tools:context=".userControl">
 
+    <ListView
+        android:id="@+id/allWebsites"
+        style="@style/Widget.AppCompat.Light.ListView.DropDown"
+        android:layout_width="match_parent"
+        android:layout_height="435dp"
+        android:layout_marginTop="15dp"
+        android:clickable="false"
+        android:divider="@color/colorPrimaryDark"
+        android:dividerHeight="2dp"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:paddingBottom="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteWebsiteButton2" />
+
+    <Button
+        android:id="@+id/deleteWebsiteButton2"
+        android:layout_width="166dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="59dp"
+        android:layout_weight="0"
+        android:background="@android:color/holo_red_dark"
+        android:text="@string/deleteWebsiteButton"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterWebsite2" />
+
+    <Button
+        android:id="@+id/addWebsiteButton2"
+        android:layout_width="160dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="59dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/addWebsite"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/deleteWebsiteButton2"
+        app:layout_constraintTop_toBottomOf="@+id/enterWebsite2" />
+
+    <EditText
+        android:id="@+id/enterWebsite2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/placeHolder"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/authorizedWebsitesTitle2" />
+
+    <TextView
+        android:id="@+id/authorizedWebsitesTitle2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/authorized"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+
     <CheckBox
         android:id="@+id/checkBox2"
         android:layout_width="115dp"

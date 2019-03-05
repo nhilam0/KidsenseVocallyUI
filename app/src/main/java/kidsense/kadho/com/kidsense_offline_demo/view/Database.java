@@ -8,8 +8,8 @@ import java.sql.ResultSet;
 
 public class Database {
 
-    private static final String username = "root";
-    private static final String password = "56723595Angel";
+    private static final String username = "capadmin";
+    private static final String password = ".cuddlefish";
 
     private Database() {}
 
@@ -21,7 +21,7 @@ public class Database {
         }
 
         try {
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/kidsense", username, password);
+            return DriverManager.getConnection("jdbc:mysql://capstone.cbmzu8sefbol.us-west-1.rd.amazonaws.com:3306/FAKEKIDSENSE", username, password);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
