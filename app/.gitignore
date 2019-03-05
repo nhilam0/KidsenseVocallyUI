@@ -3,4 +3,4 @@
 *.properties
 *.ser
 .idea/workspace.xml
-
+.gradle
