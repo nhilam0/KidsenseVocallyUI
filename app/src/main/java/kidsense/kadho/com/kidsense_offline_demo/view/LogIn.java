@@ -17,8 +17,15 @@ public class LogIn extends AppCompatActivity {
     }
 
     public void goToMain(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+
+        if (ExecuteCommands.verifyUser(findViewById(R.id.email).toString(), findViewById(R.id.password).toString())) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        } else {
+            System.out.println("Invalid sign in");
+        }
+
+
     }
 
 

@@ -37,6 +37,5 @@ dependencies {
     implementation project(':kidsensevad')
     implementation 'com.android.support:design:27.1.1'
     implementation 'org.apache.opennlp:opennlp-tools:1.9.1'
-    implementation files ('lib/mysql:mysql-connector-java:8.0.15')
-
+    implementation fileTree('lib/mysql-connector-java-8.0.15.jar')
 }

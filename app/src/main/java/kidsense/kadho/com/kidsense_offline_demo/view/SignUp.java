@@ -82,7 +82,7 @@ public class SignUp extends AppCompatActivity {
     public void goToMain(View view) {
         validateFields();
 
-        Connection conn = Database.establishConnection();
+        Connection conn = ExecuteCommands.establishConnection();
 
         if(this.isValid) {
             Intent intent = new Intent(this, MainActivity.class);
