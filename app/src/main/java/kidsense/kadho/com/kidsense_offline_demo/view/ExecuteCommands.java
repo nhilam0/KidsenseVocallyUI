@@ -113,6 +113,28 @@ public class ExecuteCommands {
         return false;
     }
 
+    public static SettingsModel getSettings() {
+        Connection con = establishConnection();
+        try {
+            Statement statement = con.createStatement();
+            ResultSet set = statement.executeQuery("SELECT * FROM `Settings` WHERE `UID` = 1");
+            set.next();
+            return new SettingsModel(set.getBoolean("FullName"), set.getBoolean("Address"),
+                    set.getBoolean("PhoneNumber"), set.getBoolean("Email"),
+            set.getBoolean("Social"), set.getBoolean("Location"));
+            // Create new Settings Object
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+
+        return new SettingsModel();
+
+    }
+
     public static void main(String[] args) {
         Connection con = establishConnection();
 
