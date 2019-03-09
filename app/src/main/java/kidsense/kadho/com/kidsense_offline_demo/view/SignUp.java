@@ -23,13 +23,6 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
-        findViewById(R.id.loginLink).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToLogin(v);
-            }
-        });
     }
 
     private void validateFields(){
