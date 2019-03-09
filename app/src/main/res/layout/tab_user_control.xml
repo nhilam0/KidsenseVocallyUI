@@ -7,19 +7,90 @@
     android:background="@color/background"
     tools:context=".userControl">
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="115dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:checked="true"
-        android:clickable="false"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/allowed"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="20sp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/authorizedWebsitesTitle2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/authorized"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/enterWebsite"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/placeHolder"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textColorHint="#fff"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/listViewButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp">
+
+            <Button
+                android:id="@+id/addWebsiteButton"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/addWebsite"
+                android:textColor="@android:color/white" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/background" />
+
+            <Button
+                android:id="@+id/deleteWebsiteButton"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/holo_red_dark"
+                android:text="@string/deleteWebsiteButton"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/background"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="347dp" />
+
+        <ListView
+            android:id="@+id/allWebsites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

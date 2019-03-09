@@ -8,9 +8,9 @@
     <string name="imageDescription">KidSense Logo</string>
     <string name="tab_label1">Security</string>
     <string name="tab_label2">Feature Control</string>
-    <string name="tab_label3">User Controls</string>
-    <string name="addWebsite">Add Website</string>
-    <string name="deleteWebsiteButton">Delete Website</string>
+    <string name="tab_label3">Content Control</string>
+    <string name="addWebsite">Add</string>
+    <string name="deleteWebsiteButton">Delete</string>
     <string name="authorized"><u>Authorized Websites</u></string>
     <string name="placeHolder">Enter Website</string>
     <string name="onlineShopping">Online Shopping</string>
