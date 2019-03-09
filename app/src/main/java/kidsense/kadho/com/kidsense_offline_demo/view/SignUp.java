@@ -8,16 +8,16 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 
-import java.sql.Connection;
-import java.util.regex.Pattern;
-
-import java.sql.SQLException;
-
 import kidsense.kadho.com.kidsense_offline_demo.R;
 import kidsense.kadho.com.kidsense_offline_demo.view.MainActivity;
 
 public class SignUp extends AppCompatActivity {
     private boolean isValid = true;
+    private EditText firstName;
+    private EditText lastName;
+    private EditText username;
+    private EditText email;
+    private EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,40 +35,40 @@ public class SignUp extends AppCompatActivity {
     private void validateFields(){
         this.isValid = true;
 
-        EditText firstName = findViewById(R.id.firstName);
-        EditText lastName = findViewById(R.id.lastName);
-        EditText username = findViewById(R.id.username);
-        EditText email = findViewById(R.id.email);
-        EditText password = findViewById(R.id.password);
+        this.firstName = findViewById(R.id.firstName);
+        this.lastName = findViewById(R.id.lastName);
+        this.username = findViewById(R.id.username);
+        this.email = findViewById(R.id.email);
+        this.password = findViewById(R.id.password);
 
-        if( isEmpty(firstName) ){
-            firstName.setError("Field can't be empty.");
+        if( isEmpty(this.firstName) ){
+            this.firstName.setError("Field can't be empty.");
             this.isValid = false;
         }
 
-        if( isEmpty(lastName) ){
-            lastName.setError("Field can't be empty.");
+        if( isEmpty(this.lastName) ){
+            this.lastName.setError("Field can't be empty.");
             this.isValid = false;
         }
 
-        if( isEmpty(username) ){
-            username.setError("Field can't be empty.");
+        if( isEmpty(this.username) ){
+            this.username.setError("Field can't be empty.");
             this.isValid = false;
         }
 
-        if( isEmpty(email) ){
-            email.setError("Field can't be empty.");
+        if( isEmpty(this.email) ){
+            this.email.setError("Field can't be empty.");
             this.isValid = false;
         }
 
-        String emailAddress = email.getText().toString();
+        String emailAddress = this.email.getText().toString();
         if(!Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()){
-            email.setError("Invalid Email.");
+            this.email.setError("Invalid Email.");
             this.isValid = false;
         }
 
-        if( isEmpty(password) ){
-            password.setError("Field can't be empty.");
+        if( isEmpty(this.password) ){
+            this.password.setError("Field can't be empty.");
             this.isValid = false;
         }
 
@@ -79,15 +79,15 @@ public class SignUp extends AppCompatActivity {
         return TextUtils.isEmpty(text);
     }
 
-    public void goToMain(View view) {
+    public void registerUser(View view) throws Exception {
         validateFields();
 
-        Connection conn = Database.establishConnection();
-
-        if(this.isValid) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
+        if(this.isValid)
+            new Database(SignUp.this).execute(firstName.getText().toString(),
+                                                        lastName.getText().toString(),
+                                                        username.getText().toString(),
+                                                        email.getText().toString(),
+                                                        password.getText().toString());
     }
 
     public void goToLogin(View view) {

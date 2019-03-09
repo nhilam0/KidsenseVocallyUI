@@ -1,56 +1,73 @@
 package kidsense.kadho.com.kidsense_offline_demo.view;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.widget.TextView;
 
-public class Database {
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
 
-    private static final String username = "root";
-    private static final String password = "56723595Angel";
+import javax.net.ssl.HttpsURLConnection;
 
-    private Database() {}
+import kidsense.kadho.com.kidsense_offline_demo.R;
 
-    public static Connection establishConnection() {
+public class Database extends AsyncTask<String, Void, JSONObject> {
+
+    private static String url = "https://capstone.kidsense.ai/api/server.php?action=ADD_USER&firstname=%s&lastname=%s&username=%s&email=%s&password=%s";
+    private Activity activity;
+
+    protected Database(Activity newActivity) {
+        this.activity = newActivity;
+    }
+
+    @Override
+    protected JSONObject doInBackground(String... strings) {
+        String updatedURL = String.format(url, strings[0], strings[1], strings[2], strings[3], strings[4]);
+        JSONObject response = null;
+
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
+            URL newUserRequest = new URL(updatedURL);
+            HttpsURLConnection conn = (HttpsURLConnection) newUserRequest.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("User-Agent", "Mozilla/5.0");
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+            String inputLine;
+            StringBuffer responseString = new StringBuffer();
+
+            while ((inputLine = in.readLine()) != null) {
+                responseString.append(inputLine);
+            }
+
+            in.close();
+
+            response = new JSONObject(responseString.toString());
+
+
+        } catch (Exception e){
+            e.getStackTrace();
+        }
+
+        return response;
+    }
+
+    @Override
+    protected void onPostExecute(JSONObject result){
+        try {
+            if (result.getInt("success") == 1) {
+                activity.finish();
+                activity.startActivity(new Intent(activity, MainActivity.class));
+            } else{
+                TextView error = (TextView) activity.findViewById(R.id.errorMessage);
+                error.setText(result.getString("message"));
+            }
+        } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        try {
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/kidsense", username, password);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-
-        return null;
     }
 
-    public static void main(String[] args) {
-        Connection con = establishConnection();
-
-        if(con != null) {
-            try {
-                Statement stmt = con.createStatement();
-
-                ResultSet set = stmt.executeQuery("SELECT * FROM `User` WHERE `UID` = 1");
-
-                set.next();
-
-                System.out.println(set.getInt("UID"));
-
-                //int id = set.getInt("UID");
-
-                //System.out.println(name);
-                System.out.println("HELLO");
-                con.close();
-            }catch(SQLException e) {
-                System.out.println("ERROR");
-            }
-        }
-        System.out.println("HELLO2");
-    }
 }
