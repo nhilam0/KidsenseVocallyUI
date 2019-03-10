@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kidsense Offline SDK Sample</string>
+    <string name="app_name">Kidsense Sample</string>
     <string name="stop_record">Stop Record</string>
     <string name="start_record">Start Record</string>
     <string name="timerVal">00:00:00</string>
@@ -8,9 +8,9 @@
     <string name="imageDescription">KidSense Logo</string>
     <string name="tab_label1">Security</string>
     <string name="tab_label2">Feature Control</string>
-    <string name="tab_label3">User Controls</string>
-    <string name="addWebsite">Add Website</string>
-    <string name="deleteWebsiteButton">Delete Website</string>
+    <string name="tab_label3">Content Control</string>
+    <string name="addWebsite">Add</string>
+    <string name="deleteWebsiteButton">Delete</string>
     <string name="authorized"><u>Authorized Websites</u></string>
     <string name="placeHolder">Enter Website</string>
     <string name="onlineShopping">Online Shopping</string>

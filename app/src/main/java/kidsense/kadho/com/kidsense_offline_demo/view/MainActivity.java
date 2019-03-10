@@ -447,20 +447,6 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_items, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent intent = new Intent(this, settings.class);
-        this.startActivity(intent);
-        return true;
-    }
-
     public void goToSettings(View view) {
         Intent intent = new Intent(this, settings.class);
         startActivity(intent);
