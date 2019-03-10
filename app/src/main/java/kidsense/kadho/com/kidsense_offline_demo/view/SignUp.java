@@ -23,6 +23,7 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
     }
 
     private void validateFields(){
@@ -56,7 +57,7 @@ public class SignUp extends AppCompatActivity {
 
         String emailAddress = this.email.getText().toString();
         if(!Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()){
-            this.email.setError("Invalid Email.");
+            this.email.setError("Invalid email address.");
             this.isValid = false;
         }
 

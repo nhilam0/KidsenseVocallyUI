@@ -3,6 +3,7 @@ package kidsense.kadho.com.kidsense_offline_demo.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -62,8 +63,15 @@ public class Database extends AsyncTask<String, Void, JSONObject> {
                 activity.finish();
                 activity.startActivity(new Intent(activity, MainActivity.class));
             } else{
-                TextView error = (TextView) activity.findViewById(R.id.errorMessage);
-                error.setText(result.getString("message"));
+                String errorMessage = result.getString("message");
+
+                if(errorMessage.contains("Username")) {
+                    EditText username = (EditText) activity.findViewById(R.id.username);
+                    username.setError(errorMessage);
+                } else if(errorMessage.contains("Email address")){
+                    EditText emailAddress = (EditText) activity.findViewById(R.id.email);
+                    emailAddress.setError(errorMessage);
+                }
             }
         } catch (JSONException e) {
             e.printStackTrace();
