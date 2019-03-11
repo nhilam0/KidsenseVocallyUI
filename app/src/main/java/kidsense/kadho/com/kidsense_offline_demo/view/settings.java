@@ -10,11 +10,14 @@ import android.support.v7.widget.Toolbar;
 import kidsense.kadho.com.kidsense_offline_demo.R;
 
 public class settings extends AppCompatActivity {
+    private String userID = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        this.userID = getIntent().getStringExtra("userID");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -37,7 +40,7 @@ public class settings extends AppCompatActivity {
         // Each page is represented by its own fragment.
         // This is another example of the adapter pattern.
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
+        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), this.userID);
         viewPager.setAdapter(adapter);
 
         // Setting a listener for clicks.
@@ -50,7 +53,6 @@ public class settings extends AppCompatActivity {
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
             }
 
             @Override

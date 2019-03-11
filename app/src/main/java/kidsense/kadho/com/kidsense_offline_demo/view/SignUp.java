@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import kidsense.kadho.com.kidsense_offline_demo.R;
-import kidsense.kadho.com.kidsense_offline_demo.view.MainActivity;
 
 public class SignUp extends AppCompatActivity {
     private boolean isValid = true;
@@ -32,7 +31,7 @@ public class SignUp extends AppCompatActivity {
         this.firstName = findViewById(R.id.firstName);
         this.lastName = findViewById(R.id.lastName);
         this.username = findViewById(R.id.username);
-        this.email = findViewById(R.id.email);
+        this.email = findViewById(R.id.username);
         this.password = findViewById(R.id.password);
 
         if( isEmpty(this.firstName) ){
@@ -77,7 +76,7 @@ public class SignUp extends AppCompatActivity {
         validateFields();
 
         if(this.isValid)
-            new Database(SignUp.this).execute(firstName.getText().toString(),
+            new RegisterUser(SignUp.this).execute(firstName.getText().toString(),
                                                         lastName.getText().toString(),
                                                         username.getText().toString(),
                                                         email.getText().toString(),
