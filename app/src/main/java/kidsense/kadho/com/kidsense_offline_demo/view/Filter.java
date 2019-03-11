@@ -48,8 +48,11 @@ public class Filter {
 
     private static HashSet<String> profanityList = new HashSet<>();
 
-    private static HashSet<String> emailDomains = new HashSet<>(Arrays.asList(".com", ".org", ".edu",".net"));
+    private static HashSet<String> addressDomains = new HashSet<>(Arrays.asList("alley", "avenue", "backroad",
+            "boulevard", "crescent", "court", "drive", "lane", "street", "place", "road", "route", "way"));
 
+    private static HashSet<String> addressIdentifiers = new HashSet<>(Arrays.asList(
+            "my address is", "i live at", "send it to", "take me to", "the directions to"));
 
     private static WordToNumber wtn;
 
@@ -100,6 +103,7 @@ public class Filter {
         censored = filterNumbers(censored);
         censored = filterProfanity(censored);
         censored = filterEmail(censored);
+        //censored = filterAddress(censored);
 
         //censored = genericEntityFilter(censored, tokens, locationModel);
 
@@ -238,5 +242,30 @@ public class Filter {
         }catch(IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static String filterAddress(String text) {
+        String temp = "";
+        for (String identifier: addressIdentifiers) {
+            if (text.toLowerCase().contains(identifier)) {
+                String [] sentence = text.split(" ");
+                int start = 0;
+                for (int i = 0; i < sentence.length; i++) {
+                    if (sentence[i].matches("[0-9]{1,5}")) {
+                        sentence[i] = "**";
+                        start = i;
+                    }
+                    else if (addressDomains.contains(sentence[i].toLowerCase())) {
+                        sentence[i] = "**";
+                        start = 0;
+                    }
+                    else if (start != 0) {
+                        sentence[i] = "**";
+                    }
+                    temp += sentence[i] + " ";
+                }
+            }
+        }
+        return temp;
     }
 }

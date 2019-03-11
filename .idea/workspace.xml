@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4511b379-67ba-4b23-8579-6431a0f91386" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/en-ner-names-25k.bin" afterDir="false" />
+    <list default="true" id="7bdb4cbf-7038-459f-a43c-3828709cf453" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" afterDir="false" />
@@ -13,15 +12,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KidsenseVocallyUI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/KidsenseVocallyUI.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/kidsense/kadho/com/kidsense_offline_demo/view/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kidsense/kadho/com/kidsense_offline_demo/view/Filter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kidsense/kadho/com/kidsense_offline_demo/view/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kidsense/kadho/com/kidsense_offline_demo/view/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kidsense_en_large_v2/kidsense_en_large_v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kidsense_en_large_v2/kidsense_en_large_v2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kidsense_en_medium_v2/kidsense_en_medium_v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kidsense_en_medium_v2/kidsense_en_medium_v2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kidsense_en_small_v2/kidsense_en_small_v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kidsense_en_small_v2/kidsense_en_small_v2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kidsensemedia/kidsensemedia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kidsensemedia/kidsensemedia.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kidsenseofflinesdk/kidsenseofflinesdk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kidsenseofflinesdk/kidsenseofflinesdk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kidsensevad/kidsensevad.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kidsensevad/kidsensevad.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,60 +38,42 @@
     </system>
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="-74802531">
+    <session id="-1231147416">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gradle" value="1" />
-          <entry key="java" value="2" />
+          <entry key="java" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="5" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/kidsense/kadho/com/kidsense_offline_demo/view/Filter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3009">
-              <caret line="241" column="1" selection-start-line="241" selection-start-column="1" selection-end-line="241" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#filterNumbers#0;class#Filter#0" />
-                <element signature="method#findPOS#0;class#Filter#0" />
-                <element signature="method#filterProfanity#0;class#Filter#0" />
-                <element signature="method#fillProfanityList#0;class#Filter#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/kidsense/kadho/com/kidsense_offline_demo/view/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="437" selection-start-line="437" selection-end-line="437" />
+            <state relative-caret-position="493">
+              <caret line="269" column="5" selection-start-line="269" selection-start-column="5" selection-end-line="269" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -111,14 +94,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/kidsense/kadho/com/kidsense_offline_demo/view/Filter.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/kidsense/kadho/com/kidsense_offline_demo/view/MainActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="675" />
-    <option name="y" value="-30" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="522" />
+    <option name="y" value="16" />
     <option name="width" value="1440" />
     <option name="height" value="800" />
   </component>
@@ -131,46 +112,38 @@
         <subPane>
           <expand>
             <path>
-              <item name="kidsensevocallyui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsensevocallyui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KidsenseVocallyUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KidsenseVocallyUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="kidsensevocallyui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsensevocallyui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KidsenseVocallyUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KidsenseVocallyUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="kidsensevocallyui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsensevocallyui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kidsensevocallyui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsensevocallyui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KidsenseVocallyUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KidsenseVocallyUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="kidsensevocallyui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsensevocallyui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KidsenseVocallyUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KidsenseVocallyUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="kidsensevocallyui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsensevocallyui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KidsenseVocallyUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KidsenseVocallyUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="kidsensevocallyui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsensevocallyui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KidsenseVocallyUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KidsenseVocallyUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -178,8 +151,8 @@
               <item name="kidsense_offline_demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="kidsensevocallyui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsensevocallyui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KidsenseVocallyUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KidsenseVocallyUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -191,31 +164,26 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
-              <item name="kidsensevocallyui" type="1abcf292:AndroidViewProjectNode" />
-              <item name="kidsensevocallyui" type="462c0819:PsiDirectoryNode" />
+              <item name="KidsenseVocallyUI" type="1abcf292:AndroidViewProjectNode" />
+              <item name="KidsenseVocallyUI" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="Pixel_2_XL_API_27" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Clone/kidsensevocallyui" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ferna\Desktop\191A\Clone\kidsensevocallyui\app\src\main\assets" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -295,11 +263,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4511b379-67ba-4b23-8579-6431a0f91386" name="Default Changelist" comment="" />
-      <created>1552277754631</created>
+      <changelist id="7bdb4cbf-7038-459f-a43c-3828709cf453" name="Default Changelist" comment="" />
+      <created>1552338829112</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1552277754631</updated>
+      <updated>1552338829112</updated>
     </task>
     <servers />
   </component>
@@ -315,7 +283,7 @@
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Run" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Logcat" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="TODO" />
@@ -335,31 +303,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/kidsense/kadho/com/kidsense_offline_demo/view/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="437" selection-start-line="437" selection-end-line="437" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/kidsense/kadho/com/kidsense_offline_demo/view/Filter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3009">
-          <caret line="241" column="1" selection-start-line="241" selection-start-column="1" selection-end-line="241" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#filterNumbers#0;class#Filter#0" />
-            <element signature="method#findPOS#0;class#Filter#0" />
-            <element signature="method#filterProfanity#0;class#Filter#0" />
-            <element signature="method#fillProfanityList#0;class#Filter#0" />
-          </folding>
+        <state relative-caret-position="493">
+          <caret line="269" column="5" selection-start-line="269" selection-start-column="5" selection-end-line="269" selection-end-column="5" />
         </state>
       </provider>
     </entry>
