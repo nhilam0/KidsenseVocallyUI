@@ -107,7 +107,12 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         _tvBox2.setMovementMethod(new ScrollingMovementMethod());
 
         //filter
-        filter = Filter.getFilter(this);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                filter = Filter.getFilter(Instance);
+            }
+        });
     }
 
     private boolean checkPermission() {
