@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
     private ProgressDialog _dialog;
 
     private Filter filter;
+    private String userID =  null;
 
     private boolean isAllPermissionsGranted = false;
     @Override
@@ -82,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         if (isAllPermissionsGranted){
             initModel();
         }
+
+        this.userID = getIntent().getStringExtra("userID");
     }
 
     public void initModel(){
@@ -448,12 +451,14 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
                 enableButtons(false,Configs.IS_USE_LOCAL_VAD);
             }
         });
-
-
     }
 
     public void goToSettings(View view) {
-        Intent intent = new Intent(this, settings.class);
-        startActivity(intent);
+        Intent openSettings = new Intent(this, settings.class);
+
+        openSettings.putExtra("userID", this.userID);
+
+        startActivity(openSettings);
+        finish();
     }
 }

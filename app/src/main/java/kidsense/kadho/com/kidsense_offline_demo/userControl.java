@@ -1,6 +1,7 @@
 package kidsense.kadho.com.kidsense_offline_demo;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,11 +16,18 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import kidsense.kadho.com.kidsense_offline_demo.view.AddWebsite;
+import kidsense.kadho.com.kidsense_offline_demo.view.LogIn;
+import kidsense.kadho.com.kidsense_offline_demo.view.UserLogin;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
+@SuppressLint("ValidFragment")
 public class userControl extends Fragment {
+    private String userID = null;
+
     private ArrayList<String> authoizedWebsites = new ArrayList<String>(Arrays.asList("WWW.KIDSESNE.AI", "WWW.KADHO.COM"));
 
     private int deleteWebsite = -1;
@@ -30,8 +38,8 @@ public class userControl extends Fragment {
     Button deleteButton;
     ListView listView;
 
-    public userControl() {
-        // Required empty public constructor
+    public userControl(String userID) {
+        this.userID = userID;
     }
 
 
@@ -57,6 +65,7 @@ public class userControl extends Fragment {
         onBtnClick();
         onDeleteBtnClicked();
 
+
         return rootView;
     }
 
@@ -80,12 +89,15 @@ public class userControl extends Fragment {
     }
 
     public void onBtnClick(){
+        final String userID = this.userID;
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String website = text.getText().toString().toUpperCase();
-                if(!website.isEmpty() && !authoizedWebsites.contains(website))
+                if(!website.isEmpty() && !authoizedWebsites.contains(website)){
                     authoizedWebsites.add(website);
+                    new AddWebsite().execute(userID, website);
+                }
 
                 text.setText("");
                 unMarkItems();

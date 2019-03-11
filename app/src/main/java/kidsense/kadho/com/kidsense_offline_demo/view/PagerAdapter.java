@@ -11,9 +11,12 @@ import kidsense.kadho.com.kidsense_offline_demo.userControl;
 public class PagerAdapter extends FragmentStatePagerAdapter {
 
     int mNumOfTabs;
-    public PagerAdapter(FragmentManager fm) {
+    String userID;
+
+    public PagerAdapter(FragmentManager fm, String userID) {
         super(fm);
         this.mNumOfTabs = 3;
+        this.userID = userID;
     }
 
     @Override
@@ -24,7 +27,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
             case 1:
                 return new featureControl();
             case 2:
-                return new userControl();
+                return new userControl(userID);
             default:
                 return null;
         }
