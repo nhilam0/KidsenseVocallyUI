@@ -1,5 +1,6 @@
 package kidsense.kadho.com.kidsense_offline_demo.view;
 
+import kidsense.kadho.com.kidsense_offline_demo.R;
 import opennlp.tools.tokenize.SimpleTokenizer;
 import opennlp.tools.util.Span;
 
@@ -20,15 +21,16 @@ import java.util.HashSet;
 import java.util.Arrays;
 
 import android.app.Activity;
+import android.content.res.AssetManager;
+import android.view.View;
+
 
 public class Filter {
 
     private static final String PERSON_MODEL_PATH = "en-ner-person.bin";
 
-    //private static final String NAME_MODEL_PATH = "en-ner-names-uppercase.bin";
-    //private static final String NAME_MODEL_PATH = "en-ner-names-lowercase.bin";
-    //private static final String NAME_MODEL_PATH = "en-ner-first-upper.bin";
-    private static final String NAME_MODEL_PATH = "en-ner-names-25k.bin";
+    //private static final String NAME_MODEL_PATH = "en-ner-names-25k.bin";
+    private static final String NAME_MODEL_PATH = "en-ner-new-names-20k.bin";
 
     //private static final String LOCATION_MODEL_PATH = "en-ner-location.bin";
 
@@ -58,17 +60,17 @@ public class Filter {
 
     private Filter() {}
 
-    private static Activity myContext;
+    private static Activity myActivity;
 
 
-    public static Filter getFilter(Activity c) {
+    public static Filter getFilter(Activity a) {
+    //public static Filter getFilter(Activity c) {
         if(filter == null) {
             filter = new Filter();
             wtn = new WordToNumber();
-            myContext = c;
+            myActivity = a;
 
             fillProfanityList();
-
 
             generateModels();
         }
@@ -99,7 +101,6 @@ public class Filter {
         //censored = genericEntityFilter(text, tokens, personModel);
         censored = genericEntityFilter(text, tokens, nameModel);
 
-        //censored = filterNumbers(text);
         censored = filterNumbers(censored);
         censored = filterProfanity(censored);
         censored = filterEmail(censored);
@@ -121,7 +122,7 @@ public class Filter {
     private static InputStream createStream(String path) {
         InputStream stream = null;
         try {
-            stream = myContext.getAssets().open(path);
+            stream = myActivity.getAssets().open(path);
 
             return stream;
         }catch(FileNotFoundException e) {
@@ -129,7 +130,7 @@ public class Filter {
         }catch(IOException e) {
             e.printStackTrace();
         }finally {
-            myContext.getAssets().close();
+            myActivity.getAssets().close();
         }
 
         return stream;
@@ -234,7 +235,9 @@ public class Filter {
 
     private static void fillProfanityList() {
         try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(myContext.getAssets().open(PROFANITY_PATH)));
+            //BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(myActivity.getAssets().open(PROFANITY_PATH)));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(myActivity.getAssets().open(PROFANITY_PATH)));
+
             String currentLine;
             while ((currentLine = bufferedReader.readLine()) != null) {
                 profanityList.add(currentLine);

@@ -60,11 +60,11 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
 
     private Filter filter;
     private String userID =  null;
+    public ProgressDialog pd;
 
     private boolean isAllPermissionsGranted = false;
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_offline);
@@ -77,12 +77,13 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
 
         if (!checkPermission()) {
             requestPermission();
-        }else {
+        } else {
             isAllPermissionsGranted = true;
         }
-        if (isAllPermissionsGranted){
+        if (isAllPermissionsGranted) {
             initModel();
         }
+
 
         this.userID = getIntent().getStringExtra("userID");
     }
@@ -110,13 +111,27 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         _tvBox2.setMovementMethod(new ScrollingMovementMethod());
 
         //filter
-        runOnUiThread(new Runnable() {
+
+        pd = new ProgressDialog(Instance);
+        pd.setMessage("Loading Models...");
+        pd.show();
+
+
+        Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
+
                 filter = Filter.getFilter(Instance);
+                pd.dismiss();
             }
         });
+
+        thread.start();
+
+
+
     }
+
 
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(getApplicationContext(),READ_EXTERNAL_STORAGE);
