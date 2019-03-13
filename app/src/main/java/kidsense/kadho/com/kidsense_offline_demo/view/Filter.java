@@ -13,33 +13,35 @@ import opennlp.tools.namefind.NameFinderME;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InputStream;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import java.util.HashSet;
 import java.util.Arrays;
+import java.util.ArrayList;
 
-import android.app.Activity;
+import android.content.Context;
 
 public class Filter {
 
-    private static final String PERSON_MODEL_PATH = "en-ner-person.bin";
+    //private static final String PERSON_MODEL_PATH = "en-ner-person.bin";
 
     //private static final String NAME_MODEL_PATH = "en-ner-names-uppercase.bin";
     //private static final String NAME_MODEL_PATH = "en-ner-names-lowercase.bin";
-    //private static final String NAME_MODEL_PATH = "en-ner-first-upper.bin";
-    private static final String NAME_MODEL_PATH = "en-ner-names-25k.bin";
+    private static final String NAME_MODEL_PATH = "en-ner-first-upper.bin";
 
     //private static final String LOCATION_MODEL_PATH = "en-ner-location.bin";
 
     //note used atm
     private static final String POS_MODEL_PATH = "en-pos-maxent.bin";
 
+
     private static final String PROFANITY_PATH = "profanity.txt";
 
     private static Filter filter;
 
-    private static NameFinderME personModel;
+    //private static NameFinderME personModel;
 
     //private static NameFinderME locationModel;
 
@@ -48,29 +50,32 @@ public class Filter {
 
     private static HashSet<String> profanityList = new HashSet<>();
 
-    private static HashSet<String> addressDomains = new HashSet<>(Arrays.asList("alley", "avenue", "backroad",
-            "boulevard", "crescent", "court", "drive", "lane", "street", "place", "road", "route", "way"));
+    private static HashSet<String> emailDomains = new HashSet<>(Arrays.asList(".com", ".org", ".edu",".net"));
 
-    private static HashSet<String> addressIdentifiers = new HashSet<>(Arrays.asList(
-            "my address is", "i live at", "send it to", "take me to", "the directions to"));
 
     private static WordToNumber wtn;
 
     private Filter() {}
 
-    private static Activity myContext;
+    private static Context myContext;
 
-
-    public static Filter getFilter(Activity c) {
+    public static Filter getFilter(Context c) {
         if(filter == null) {
             filter = new Filter();
             wtn = new WordToNumber();
             myContext = c;
 
-            fillProfanityList();
+            try {
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(myContext.getAssets().open(PROFANITY_PATH)));
+                String currentLine;
+                while ((currentLine = bufferedReader.readLine()) != null) {
+                    profanityList.add(currentLine);
+                }
+            }catch(IOException e) {
+                e.printStackTrace();
+            }
 
-
-            generateModels();
+            //generateModels();
         }
 
         return filter;
@@ -79,32 +84,16 @@ public class Filter {
     public String filterText(String text) {
 
         text = wtn.replaceNums(text);
+        String[] tokens = createTokens(text);
 
         String censored;
 
-        String[] splits = text.split(" ");
-
-        text = "";
-
-        for(String s : splits) {
-            if(s.length() > 1) {
-                text += s.substring(0, 1).toUpperCase() + s.substring(1) + " ";
-            }else {
-                text += s.toUpperCase() + " ";
-            }
-        }
-
-        String[] tokens = createTokens(text);
-
-        //censored = genericEntityFilter(text, tokens, personModel);
-        censored = genericEntityFilter(text, tokens, nameModel);
-
-        //censored = filterNumbers(text);
-        censored = filterNumbers(censored);
+        censored = filterNumbers(text);
         censored = filterProfanity(censored);
-        censored = filterEmail(censored);
-        //censored = filterAddress(censored);
+        //censored = filterEmail(censored);
 
+        //censored = genericEntityFilter(censored, tokens, nameModel);
+        //censored = genericEntityFilter(text, tokens, personModel);
         //censored = genericEntityFilter(censored, tokens, locationModel);
 
         return censored;
@@ -121,6 +110,7 @@ public class Filter {
     private static InputStream createStream(String path) {
         InputStream stream = null;
         try {
+            //stream = new FileInputStream(path);
             stream = myContext.getAssets().open(path);
 
             return stream;
@@ -172,12 +162,12 @@ public class Filter {
                 e.printStackTrace();
             }
         }
-
         return finder;
     }
 
     //Filters entities based on a supplied finder model
     private static String genericEntityFilter(String text, String[] tokens, NameFinderME finder) {
+
         Span[] nameSpans = finder.find(tokens);
 
         String[] spans = Span.spansToStrings(nameSpans, tokens);
@@ -215,6 +205,8 @@ public class Filter {
         return tags;
     }
 
+
+    //Randys Code
     private static String filterProfanity(String text) {
         String [] split = text.split(" ");
         String temp = "";
@@ -228,43 +220,38 @@ public class Filter {
     }
 
     private static String filterEmail(String text) {
-        String regex = "^[a-zA-Z]* at [a-zA-Z]* dot (com|edu|org|net)$";
-        return text.replaceAll(regex, "*****");
-    }
-
-    private static void fillProfanityList() {
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(myContext.getAssets().open(PROFANITY_PATH)));
-            String currentLine;
-            while ((currentLine = bufferedReader.readLine()) != null) {
-                profanityList.add(currentLine);
-            }
-        }catch(IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static String filterAddress(String text) {
+        String [] split = text.split(" ");
         String temp = "";
-        for (String identifier: addressIdentifiers) {
-            if (text.toLowerCase().contains(identifier)) {
-                String [] sentence = text.split(" ");
-                int start = 0;
-                for (int i = 0; i < sentence.length; i++) {
-                    if (sentence[i].matches("[0-9]{1,5}")) {
-                        sentence[i] = "**";
-                        start = i;
+        //EMAIL AS TEXT INPUT
+        /*
+        for (String word: split) {
+            if (word.contains("@")) {
+                for (String email: emailDomains) {
+                    if (word.contains(email)) {
+                        word = "***";
                     }
-                    else if (addressDomains.contains(sentence[i].toLowerCase())) {
-                        sentence[i] = "**";
-                        start = 0;
-                    }
-                    else if (start != 0) {
-                        sentence[i] = "**";
-                    }
-                    temp += sentence[i] + " ";
                 }
             }
+            temp += word + " ";
+        }
+        */
+        //ASR INPUT (username identified as one word)
+        ArrayList<String> sentence = new ArrayList<>();
+        for (int i = 0; i < split.length; i ++) {
+            if (split[i].equals("dot") && split[i-2].equals("at")) {
+                sentence.set(i-3, "*****");
+                sentence.set(i-2, "*****");
+                sentence.set(i-1, "*****");
+                sentence.add("*****");
+                sentence.add("*****");
+                i++;
+            }
+            else {
+                sentence.add(split[i]);
+            }
+        }
+        for (String word: sentence) {
+            temp += word + " ";
         }
         return temp;
     }
