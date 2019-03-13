@@ -14,11 +14,14 @@ import opennlp.tools.namefind.NameFinderME;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InputStream;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import java.util.HashSet;
 import java.util.Arrays;
+import java.util.ArrayList;
+
 
 import android.app.Activity;
 import android.content.res.AssetManager;
@@ -27,21 +30,24 @@ import android.view.View;
 
 public class Filter {
 
-    private static final String PERSON_MODEL_PATH = "en-ner-person.bin";
+    //private static final String PERSON_MODEL_PATH = "en-ner-person.bin";
+
 
     //private static final String NAME_MODEL_PATH = "en-ner-names-25k.bin";
     private static final String NAME_MODEL_PATH = "en-ner-new-names-20k.bin";
+
 
     //private static final String LOCATION_MODEL_PATH = "en-ner-location.bin";
 
     //note used atm
     private static final String POS_MODEL_PATH = "en-pos-maxent.bin";
 
+
     private static final String PROFANITY_PATH = "profanity.txt";
 
     private static Filter filter;
 
-    private static NameFinderME personModel;
+    //private static NameFinderME personModel;
 
     //private static NameFinderME locationModel;
 
@@ -55,6 +61,7 @@ public class Filter {
 
     private static HashSet<String> addressIdentifiers = new HashSet<>(Arrays.asList(
             "my address is", "i live at", "send it to", "take me to", "the directions to"));
+
 
     private static WordToNumber wtn;
 
@@ -173,12 +180,12 @@ public class Filter {
                 e.printStackTrace();
             }
         }
-
         return finder;
     }
 
     //Filters entities based on a supplied finder model
     private static String genericEntityFilter(String text, String[] tokens, NameFinderME finder) {
+
         Span[] nameSpans = finder.find(tokens);
 
         String[] spans = Span.spansToStrings(nameSpans, tokens);
@@ -216,6 +223,8 @@ public class Filter {
         return tags;
     }
 
+
+    //Randys Code
     private static String filterProfanity(String text) {
         String [] split = text.split(" ");
         String temp = "";
@@ -246,7 +255,7 @@ public class Filter {
             e.printStackTrace();
         }
     }
-
+ 
     private static String filterAddress(String text) {
         String temp = "";
         for (String identifier: addressIdentifiers) {
@@ -271,4 +280,5 @@ public class Filter {
         }
         return temp;
     }
+
 }
