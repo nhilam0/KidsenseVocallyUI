@@ -115,7 +115,7 @@ public class Filter {
 
         //censored = genericEntityFilter(censored, tokens, locationModel);
 
-        return censored;
+        return censored.toLowerCase();
     }
 
     //Generate streams on construction so not continuously re-generated when calling filtertext
