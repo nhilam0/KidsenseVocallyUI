@@ -1,16 +1,19 @@
 package kidsense.kadho.com.kidsense_offline_demo.view;
 
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import kidsense.kadho.com.kidsense_offline_demo.R;
 
 public class settings extends AppCompatActivity {
     private String userID = null;
+    private UserSettings settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,7 @@ public class settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         this.userID = getIntent().getStringExtra("userID");
+        this.settings = getIntent().getParcelableExtra("userSettings");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -40,7 +44,7 @@ public class settings extends AppCompatActivity {
         // Each page is represented by its own fragment.
         // This is another example of the adapter pattern.
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), this.userID);
+        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), this.userID, this.settings);
         viewPager.setAdapter(adapter);
 
         // Setting a listener for clicks.
@@ -59,5 +63,24 @@ public class settings extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("userSettings", this.settings);
+        returnIntent.putExtra("userid", this.userID);
+        setResult(RESULT_OK, returnIntent);
+        super.onBackPressed();
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return false;
     }
 }

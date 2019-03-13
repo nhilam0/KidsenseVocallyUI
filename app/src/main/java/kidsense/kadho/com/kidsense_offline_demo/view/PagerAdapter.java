@@ -12,11 +12,13 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
     int mNumOfTabs;
     String userID;
+    UserSettings settings;
 
-    public PagerAdapter(FragmentManager fm, String userID) {
+    public PagerAdapter(FragmentManager fm, String userID, UserSettings settings) {
         super(fm);
         this.mNumOfTabs = 3;
         this.userID = userID;
+        this.settings = settings;
     }
 
     @Override
@@ -27,7 +29,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
             case 1:
                 return new featureControl();
             case 2:
-                return new userControl(userID);
+                return new userControl(userID, this.settings);
             default:
                 return null;
         }
