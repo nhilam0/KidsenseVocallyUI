@@ -59,8 +59,13 @@ public class RegisterUser extends AsyncTask<String, Void, JSONObject> {
     protected void onPostExecute(JSONObject result){
         try {
             if (result.getInt("success") == 1) {
+                String userID = result.getString("userid");
+
+                Intent startApp = new Intent(activity, MainActivity.class);
+
+                startApp.putExtra("userID", userID);
+                activity.startActivity(startApp);
                 activity.finish();
-                activity.startActivity(new Intent(activity, MainActivity.class));
             } else{
                 String errorMessage = result.getString("message");
 
@@ -68,7 +73,7 @@ public class RegisterUser extends AsyncTask<String, Void, JSONObject> {
                     EditText username = (EditText) activity.findViewById(R.id.username);
                     username.setError(errorMessage);
                 } else if(errorMessage.contains("Email address")){
-                    EditText emailAddress = (EditText) activity.findViewById(R.id.username);
+                    EditText emailAddress = (EditText) activity.findViewById(R.id.emailAddress);
                     emailAddress.setError(errorMessage);
                 }
             }
