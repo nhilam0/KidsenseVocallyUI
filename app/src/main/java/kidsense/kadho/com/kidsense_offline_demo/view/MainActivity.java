@@ -34,8 +34,6 @@ import com.kadho.kidsense.kidsense_en_medium_v2.Kidsense_en_medium_v2;
 import com.kadho.kidsense.kidsense_en_small_v2.Kidsense_en_small_v2;
 import com.kadho.kidsense.kidsense_en_large_v2.Kidsense_en_large_v2;
 
-import java.util.ArrayList;
-
 import kidsense.kadho.com.kidsense_offline_demo.Configs;
 import kidsense.kadho.com.kidsense_offline_demo.R;
 
@@ -64,23 +62,12 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
     private String userID =  null;
 
     private boolean isAllPermissionsGranted = false;
-
-    protected UserSettings settings;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_offline);
-
-        this.userID = getIntent().getStringExtra("userID");
-        ArrayList<String> websites = getIntent().getStringArrayListExtra("websites");
-
-        if(websites != null)
-            this.settings = new UserSettings(websites);
-        else
-            this.settings = new UserSettings(new ArrayList<String>());
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -96,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         if (isAllPermissionsGranted){
             initModel();
         }
+
+        this.userID = getIntent().getStringExtra("userID");
     }
 
     public void initModel(){
@@ -465,28 +454,11 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
     }
 
     public void goToSettings(View view) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Intent openSettings = new Intent(MainActivity.Instance, settings.class);
+        Intent openSettings = new Intent(this, settings.class);
 
-                openSettings.putExtra("userID", userID);
-                openSettings.putExtra("userSettings", settings);
+        openSettings.putExtra("userID", this.userID);
 
-                startActivityForResult(openSettings, 1);
-            }
-        });
-    }
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        System.out.println(data.getStringExtra("userid"));
-
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK) {
-                this.settings = data.getParcelableExtra("userSettings");
-                this.userID = data.getStringExtra("userid");
-            }
-        }
+        startActivity(openSettings);
+        finish();
     }
 }

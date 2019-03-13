@@ -1,18 +1,26 @@
 package kidsense.kadho.com.kidsense_offline_demo.view;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.widget.TextView;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+
 import javax.net.ssl.HttpsURLConnection;
+
 import kidsense.kadho.com.kidsense_offline_demo.R;
 
 public class AddWebsite extends AsyncTask<String, Void, JSONObject> {
+
     private static String url = "https://capstone.kidsense.ai/api/server.php?action=ADD_WEBSITE&userid=%s&website=%s";
 
-    public AddWebsite() {}
+    public AddWebsite(){}
 
     @Override
     protected JSONObject doInBackground(String... strings) {
@@ -45,5 +53,12 @@ public class AddWebsite extends AsyncTask<String, Void, JSONObject> {
     }
 
     @Override
-    protected void onPostExecute(JSONObject result) {}
+    protected void onPostExecute(JSONObject result){
+        try {
+            if (result.getInt("success") == 1) {
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -7,14 +7,12 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -67,19 +65,9 @@ public class UserLogin extends AsyncTask<String, Void, JSONObject> {
             if (result.getInt("success") == 1) {
                 String userID = result.getString("userid");
 
-                // Get User Authorized Websites
-                ArrayList<String> authoizedWebsites = new ArrayList<String>();
-                JSONArray websites = result.getJSONArray("websites");
-
-                for(int i = 0; i < websites.length(); i++){
-                    authoizedWebsites.add(websites.get(i).toString());
-                }
-
                 Intent startApp = new Intent(activity, MainActivity.class);
 
-                startApp.putExtra("websites", authoizedWebsites);
                 startApp.putExtra("userID", userID);
-
 
                 activity.startActivity(startApp);
                 activity.finish();

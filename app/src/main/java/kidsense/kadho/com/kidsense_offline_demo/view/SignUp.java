@@ -22,52 +22,49 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
     }
 
     private void validateFields(){
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                isValid = true;
+        this.isValid = true;
 
-                firstName = findViewById(R.id.firstName);
-                lastName = findViewById(R.id.lastName);
-                username = findViewById(R.id.username);
-                email = findViewById(R.id.emailAddress);
-                password = findViewById(R.id.password);
+        this.firstName = findViewById(R.id.firstName);
+        this.lastName = findViewById(R.id.lastName);
+        this.username = findViewById(R.id.username);
+        this.email = findViewById(R.id.username);
+        this.password = findViewById(R.id.password);
 
-                if( isEmpty(firstName) ){
-                    firstName.setError("Field can't be empty.");
-                    isValid = false;
-                }
+        if( isEmpty(this.firstName) ){
+            this.firstName.setError("Field can't be empty.");
+            this.isValid = false;
+        }
 
-                if( isEmpty(lastName) ){
-                    lastName.setError("Field can't be empty.");
-                    isValid = false;
-                }
+        if( isEmpty(this.lastName) ){
+            this.lastName.setError("Field can't be empty.");
+            this.isValid = false;
+        }
 
-                if( isEmpty(username) ){
-                    username.setError("Field can't be empty.");
-                    isValid = false;
-                }
+        if( isEmpty(this.username) ){
+            this.username.setError("Field can't be empty.");
+            this.isValid = false;
+        }
 
-                if( isEmpty(email) ){
-                    email.setError("Field can't be empty.");
-                    isValid = false;
-                }
+        if( isEmpty(this.email) ){
+            this.email.setError("Field can't be empty.");
+            this.isValid = false;
+        }
 
-                String emailAddress = email.getText().toString();
-                if(!Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()){
-                    email.setError("Invalid email address.");
-                    isValid = false;
-                }
+        String emailAddress = this.email.getText().toString();
+        if(!Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()){
+            this.email.setError("Invalid email address.");
+            this.isValid = false;
+        }
 
-                if( isEmpty(password) ){
-                    password.setError("Field can't be empty.");
-                    isValid = false;
-                }
-            }
-        });
+        if( isEmpty(this.password) ){
+            this.password.setError("Field can't be empty.");
+            this.isValid = false;
+        }
+
     }
 
     private boolean isEmpty(EditText input){
@@ -79,16 +76,15 @@ public class SignUp extends AppCompatActivity {
         validateFields();
 
         if(this.isValid)
-            new RegisterUser(SignUp.this).execute(this.firstName.getText().toString(),
-                                                            this.lastName.getText().toString(),
-                                                            this.username.getText().toString(),
-                                                            this.email.getText().toString(),
-                                                            this.password.getText().toString());
+            new RegisterUser(SignUp.this).execute(firstName.getText().toString(),
+                                                        lastName.getText().toString(),
+                                                        username.getText().toString(),
+                                                        email.getText().toString(),
+                                                        password.getText().toString());
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finish();
+    public void goToLogin(View view) {
+        Intent intent = new Intent(this, LogIn.class);
+        startActivity(intent);
     }
 }
