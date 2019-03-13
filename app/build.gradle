@@ -36,7 +36,6 @@ dependencies {
     implementation project(':kidsensemedia')
     implementation project(':kidsensevad')
     implementation 'com.android.support:design:27.1.1'
-    implementation 'org.apache.opennlp:opennlp-tools:1.6.0'
-    implementation 'org.osgi:org.osgi.core:4.3.0'
+    implementation 'org.apache.opennlp:opennlp-tools:1.9.1'
     implementation 'mysql:mysql-connector-java:8.0.15'
 }
