@@ -127,9 +127,6 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         });
 
         thread.start();
-
-
-
     }
 
 
