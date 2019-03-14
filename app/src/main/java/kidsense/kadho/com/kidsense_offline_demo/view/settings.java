@@ -1,11 +1,13 @@
 package kidsense.kadho.com.kidsense_offline_demo.view;
 
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import kidsense.kadho.com.kidsense_offline_demo.R;
 
@@ -59,5 +61,24 @@ public class settings extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent returnIntent = new Intent();
+        //returnIntent.putExtra("userSettings", this.settings);
+        returnIntent.putExtra("userid", this.userID);
+        setResult(RESULT_OK, returnIntent);
+        super.onBackPressed();
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return false;
     }
 }

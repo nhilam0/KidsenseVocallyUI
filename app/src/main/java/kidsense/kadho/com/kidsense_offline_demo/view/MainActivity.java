@@ -459,11 +459,28 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
     }
 
     public void goToSettings(View view) {
-        Intent openSettings = new Intent(this, settings.class);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Intent openSettings = new Intent(MainActivity.Instance, settings.class);
 
-        openSettings.putExtra("userID", this.userID);
+                openSettings.putExtra("userID", userID);
+                //openSettings.putExtra("userSettings", settings);
 
-        startActivity(openSettings);
-        finish();
+                startActivityForResult(openSettings, 1);
+            }
+        });
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        System.out.println(data.getStringExtra("userid"));
+
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                //this.settings = data.getParcelableExtra("userSettings");
+                this.userID = data.getStringExtra("userid");
+            }
+        }
     }
 }
