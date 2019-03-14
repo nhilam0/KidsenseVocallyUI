@@ -4,12 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KidsenseVocallyUI.iml" filepath="$PROJECT_DIR$/KidsenseVocallyUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kidsense-common/kidsense-common.iml" filepath="$PROJECT_DIR$/kidsense-common/kidsense-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/kidsense_en_large_v2/kidsense_en_large_v2.iml" filepath="$PROJECT_DIR$/kidsense_en_large_v2/kidsense_en_large_v2.iml" />
       <module fileurl="file://$PROJECT_DIR$/kidsense_en_medium_v2/kidsense_en_medium_v2.iml" filepath="$PROJECT_DIR$/kidsense_en_medium_v2/kidsense_en_medium_v2.iml" />
       <module fileurl="file://$PROJECT_DIR$/kidsense_en_small_v2/kidsense_en_small_v2.iml" filepath="$PROJECT_DIR$/kidsense_en_small_v2/kidsense_en_small_v2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kidsensemedia/kidsensemedia.iml" filepath="$PROJECT_DIR$/kidsensemedia/kidsensemedia.iml" />
       <module fileurl="file://$PROJECT_DIR$/kidsenseofflinesdk/kidsenseofflinesdk.iml" filepath="$PROJECT_DIR$/kidsenseofflinesdk/kidsenseofflinesdk.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kidsensevad/kidsensevad.iml" filepath="$PROJECT_DIR$/kidsensevad/kidsensevad.iml" />
     </modules>
   </component>
 </project>

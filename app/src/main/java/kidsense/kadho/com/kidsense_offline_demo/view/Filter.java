@@ -1,31 +1,21 @@
 package kidsense.kadho.com.kidsense_offline_demo.view;
 
-import kidsense.kadho.com.kidsense_offline_demo.R;
-import opennlp.tools.tokenize.SimpleTokenizer;
-import opennlp.tools.util.Span;
-
-import opennlp.tools.postag.POSTaggerME;
-import opennlp.tools.postag.POSModel;
-
-
-import opennlp.tools.namefind.TokenNameFinderModel;
-import opennlp.tools.namefind.NameFinderME;
+import android.app.Activity;
 
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.InputStream;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import java.util.HashSet;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.ArrayList;
+import java.util.HashSet;
 
-
-import android.app.Activity;
-import android.content.res.AssetManager;
-import android.view.View;
+import opennlp.tools.namefind.NameFinderME;
+import opennlp.tools.namefind.TokenNameFinderModel;
+import opennlp.tools.postag.POSModel;
+import opennlp.tools.postag.POSTaggerME;
+import opennlp.tools.tokenize.SimpleTokenizer;
+import opennlp.tools.util.Span;
 
 
 public class Filter {
@@ -137,7 +127,7 @@ public class Filter {
         }catch(IOException e) {
             e.printStackTrace();
         }finally {
-            myActivity.getAssets().close();
+            //myActivity.getAssets().close();
         }
 
         return stream;

@@ -17,9 +17,6 @@ import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -27,16 +24,12 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.kadho.android.media.KidsenseAudioRecorder;
+import com.kadho.android.common.media.KidsenseAudioRecorder;
 import com.kadho.android.sdk.asr.offline.KidsenseOfflineManager;
-
 import com.kadho.kidsense.kidsense_en_medium_v2.Kidsense_en_medium_v2;
-import com.kadho.kidsense.kidsense_en_small_v2.Kidsense_en_small_v2;
-import com.kadho.kidsense.kidsense_en_large_v2.Kidsense_en_large_v2;
 
 import kidsense.kadho.com.kidsense_offline_demo.Configs;
 import kidsense.kadho.com.kidsense_offline_demo.R;
-
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.INTERNET;
@@ -266,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
         if(_audioRecorder != null)
         {
             _audioRecorder.stopRecording();
-            _audioRecorder.RemoveListener(this);
+            _audioRecorder.removeListener(this);
         }
     }
 
@@ -288,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
 
                     if (_audioRecorder != null)
                     {
-                        _audioRecorder.RemoveListener(this);
+                        _audioRecorder.removeListener(this);
                         _audioRecorder.stopRecording();
                     }
 
@@ -315,7 +308,7 @@ public class MainActivity extends AppCompatActivity implements KidsenseAudioReco
 
                     if (_audioRecorder != null)
                     {
-                        _audioRecorder.AddListener(this);
+                        _audioRecorder.addListener(this);
                         _audioRecorder.startRecording();
                     }
                     break;
