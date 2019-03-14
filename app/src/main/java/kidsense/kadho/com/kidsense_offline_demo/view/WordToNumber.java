@@ -105,7 +105,7 @@ public class WordToNumber {
                         prev = pair;
                         num += pair.value;
                     }else {
-                        if(prev.type != TYPES.magnitude && prev.type != TYPES.ten && prev.type != TYPES.zero) {
+                        if(prev.type != TYPES.magnitude && prev.type != TYPES.ten ) {
                             String temp = (Long.toString(num) + Integer.toString(pair.value));
 
                             num = Long.parseLong(temp);

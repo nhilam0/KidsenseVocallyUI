@@ -136,8 +136,6 @@ public class Filter {
             e.printStackTrace();
         }catch(IOException e) {
             e.printStackTrace();
-        }finally {
-            myActivity.getAssets().close();
         }
 
         return stream;
@@ -200,9 +198,9 @@ public class Filter {
 
     private static String filterNumbers(String text) {
 
-        text = text.replaceAll("[0-9]{9}", "*****");
+        text = text.replaceAll("[0-9]{10}", "*****");
 
-        return text.replaceAll("[0-9]{10}", "*****");
+        return text.replaceAll("[0-9]{9}", "*****");
     }
 
     //Not used ATM
